@@ -1,10 +1,3 @@
-from cgitb import text
-from curses.ascii import isalpha, isdigit
-from operator import truediv
-from tokenize import Number
-from unicodedata import numeric
-
-
 class Ciclista:
 
     def __init__(self):
@@ -32,7 +25,10 @@ class Ciclista:
         self.__nombre=nombre
     @edad.setter
     def edad(self,edad):
-        self.__edad=edad
+        if(edad<15):
+            print("La edad ingresada es incorrecta")
+        else:
+            self.__edad=edad
     @pais.setter
     def pais(self,pais):
         self.__pais=pais
@@ -40,8 +36,6 @@ class Ciclista:
     def tiempo(self,tiempo):   
         if(tiempo<0):
             print("El tiempo no puede ser negativo")
-        elif tiempo.isalpha():
-            print("El tiempo debe ser en numeros")
         else:
             self.__tiempo=tiempo
-        
+    
